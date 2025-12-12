@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Digital Garden – Start</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #start-screen {
+            width: 100vw;
+            height: 100vh;
+            background: url('start_bg.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #start-screen h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        #start-button {
+            padding: 15px 35px;
+            font-size: 22px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(76, 143, 134, 0.9);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        #start-button:hover {
+            background: rgba(62, 117, 109, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="start-screen">
+    <button id="start-button">Begin Game</button>
+<p class="tagline">A calming space for reflection and self-care</p>
+</div>
+
+<script>
+    // Go to game page
+    document.getElementById("start-button").addEventListener("click", () => {
+        window.location.href = "8am.html";
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+

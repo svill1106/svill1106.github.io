@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4 PM – Clear a Thought</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url('4pm_bg.jpg') no-repeat center / cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+#cloud {
+    width: 200px;
+    height: 110px;
+    background: rgba(255,255,255,0.8);
+    color: #444;
+    padding-top: 35px;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#message {
+    display:none;
+    margin-top:20px;
+    font-size: 26px;
+}
+    
+button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>4 PM • Clear a Negative Thought</h1>
+
+<div id="cloud">Tap to Clear</div>
+<div id="message">Thought cleared. </div>
+
+<button onclick="location.href='8pm.html'">Next →</button>
+
+<script>
+document.getElementById("cloud").onclick = function () {
+    this.style.display = "none";
+    document.getElementById("message").style.display = "block";
+};
+</script>
+
+</body>
+</html>
+
+

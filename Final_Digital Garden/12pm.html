@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>12 PM – Water the Plant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url('12pm_bg.jpg') no-repeat center / cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+#plant {
+    width: 200px;
+    height: 200px;
+    background: url('plant_drawing.jpg') no-repeat center / contain;
+    cursor: pointer;
+    transition: transform 0.5s;
+    margin-bottom: 20px;
+}
+
+#message {
+    font-size: 26px;
+    margin-top: 20px;
+    display: none;
+}
+
+button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>12 PM • Water the Plant</h1>
+<p>Click the plant to water it and help it grow </p>
+
+<div id="plant"></div>
+<div id="message">Your plant is happy and growing! </div>
+
+<button onclick="location.href='2pm.html'">Next →</button>
+
+<script>
+let waterClicks = 0;
+const plant = document.getElementById('plant');
+const message = document.getElementById('message');
+
+plant.onclick = function() {
+    waterClicks++;
+    plant.style.transform = `scale(${1 + waterClicks * 0.1})`;
+
+    if(waterClicks === 3) {
+        message.style.display = 'block';
+    }
+};
+</script>
+
+</body>
+</html>
+

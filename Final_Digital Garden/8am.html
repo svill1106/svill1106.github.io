@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>8 AM – Breathing Exercise</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url('8am_bg.jpg') no-repeat center / cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+}
+
+#circle {
+    width: 150px;
+    height: 150px;
+    border: 4px solid white;
+    border-radius: 50%;
+    transition: transform 4s ease-in-out;
+}
+
+#text {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+#next {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>8 AM • Breathing Exercise</h1>
+
+<div id="circle"></div>
+<div id="text">Click to Begin</div>
+
+<button onclick="startBreathing()">Start Breathing</button>
+<button id="next" onclick="location.href='12pm.html'">Next →</button>
+
+<script>
+let steps = [
+    {text: "Breathe In…", scale: 1.8},
+    {text: "Hold…", scale: 1.8},
+    {text: "Breathe Out…", scale: 0.5},
+    {text: "Hold…", scale: 0.5}
+];
+
+function startBreathing() {
+    let i = 0;
+    function nextStep() {
+        if (i >= steps.length) {
+            document.getElementById("text").textContent = "You're doing great.";
+            return;
+        }
+        let step = steps[i];
+        document.getElementById("text").textContent = step.text;
+        document.getElementById("circle").style.transform = `scale(${step.scale})`;
+        i++;
+        setTimeout(nextStep, 4000);
+    }
+    nextStep();
+}
+</script>
+
+</body>
+</html>
+
